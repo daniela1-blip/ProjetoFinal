@@ -20,7 +20,7 @@ public class TelaListagem extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(new BorderLayout(10, 10));
 
-        // 🔹 Configuração da tabela
+        // Configuração da tabela
         modelo = new DefaultTableModel(
             new Object[][] {},
             new String[] { "Tipo", "Descrição", "Valor", "Data" }
@@ -29,7 +29,7 @@ public class TelaListagem extends JFrame {
         JScrollPane scrollPane = new JScrollPane(tabela);
         contentPane.add(scrollPane, BorderLayout.CENTER);
 
-        // 🔹 Botão para atualizar os dados
+        //  Botão para atualizar os dados
         JButton btnAtualizar = new JButton("Atualizar");
         btnAtualizar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -37,7 +37,7 @@ public class TelaListagem extends JFrame {
             }
         });
 
-        // 🔹 Botão para excluir linha
+        //  Botão para excluir linha
         JButton btnExcluir = new JButton("Excluir Selecionado");
         btnExcluir.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -56,11 +56,11 @@ public class TelaListagem extends JFrame {
         painelBotoes.add(btnExcluir);
         contentPane.add(painelBotoes, BorderLayout.SOUTH);
 
-        // 🔹 Carrega a tabela na abertura
+        //  Carrega a tabela na abertura
         atualizarTabela();
     }
 
-    // 🧩 Método que lê o ArrayList e joga os valores na tabela
+    //  Método que lê o ArrayList e joga os valores na tabela
     private void atualizarTabela() {
         modelo.setRowCount(0); // limpa tudo
         ArrayList<AtributosMovimentacao> lista = ArmazenamentoMovimentacao.getMovimentacoes();
@@ -87,4 +87,5 @@ public class TelaListagem extends JFrame {
             }
         });
     }
+
 }
